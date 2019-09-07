@@ -1,0 +1,22 @@
+<ion-content>
+    <div style="position: relative;">
+        <img class="garrafon" src="../../assets/img/garrafon.png" alt="">
+        <div class="top-center">
+            Hola {{usuario}}
+        </div>
+        <div class="bottom-center">
+            <div class="row">
+                <div class="column left" (click)="quitar()">
+                    <!-- <ion-label  color="light"><strong>-</strong></ion-label> -->
+                    <p style="font-size: 30px; margin: auto"><strong>-</strong></p>
+                </div>
+                <div class="column middle">
+                    <ion-label style="font-size: 30px">{{cantidad}}</ion-label>
+                </div>
+                <div class="column right" (click)="agregar()">
+                    <p style="font-size: 30pt; color: white"><strong>+</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

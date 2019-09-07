@@ -1,0 +1,36 @@
+.fondo {
+    position: absolute;
+    height: 100vh;
+}
+
+.cuadro {
+    position: absolute;
+    width: 65vw;
+    height: 75vh;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.leyenda {
+    color: var(--ion-color-medium);
+    font-size: 10pt;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formulario {
+    position: absolute;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.btn-face {
+    --background: #3b5998;
+}
+
+.btn-google {
+    --background: #516aa0;
+}

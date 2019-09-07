@@ -1,0 +1,21 @@
+.garrafon {
+    width: 100vw;
+}
+
+.top-center {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, 0);
+}
+
+.bottom-center {
+    position: absolute;
+    width: 80vw;
+    bottom: 100px;
+    left: 10vw;
+    // right: auto;
+    // color: white;
+    // transform: translate(25%, 0);
+}
