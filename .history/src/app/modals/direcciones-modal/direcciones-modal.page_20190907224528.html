@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Mis direcciones</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="regresar()">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item style="margin-top: 2rem; width: 80vw; margin-left: 10vw">
+        <ion-label position="stacked">Agrega una nueva dirección
+            <ion-text *ngIf="direcciones.length === 0" color="danger">*</ion-text>
+        </ion-label>
+        <ion-input id="txtHome" type="text" [(ngModel)]="inputDir" name="direccion"></ion-input>
+    </ion-item>
+    <ion-list *ngIf="direcciones.length > 0" style="margin-top: 1rem">
+        <ion-list-header>
+            <ion-label color="primary">Selecciona la dirección de entrega</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let item of direcciones" detail (click)="guardarDireccion(item)">
+            <ion-label class="ion-text-wrap">{{item.direccion}}</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

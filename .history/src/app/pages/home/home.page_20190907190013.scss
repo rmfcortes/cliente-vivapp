@@ -1,0 +1,42 @@
+.garrafon {
+    width: 100vw;
+}
+
+.top-center {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, 0);
+}
+
+.bottom-center {
+    position: absolute;
+    width: 80vw;
+    bottom: 100px;
+    left: 10vw;
+}
+
+.boton {
+    width: 100%;
+    height: 7.5vh;
+    text-align: center;
+    color: white;
+}
+
+.izq {
+    background: var(--ion-color-secondary);
+    border-radius: 100px 0 0 100px;
+    box-shadow: -2.5px 2.5px 10px grey;
+}
+
+.der {
+    background: var(--ion-color-primary);
+    border-radius: 0 100px 100px 0;
+    box-shadow: 2.5px 2.5px 10px grey;
+}
+
+.plusMinus {
+    font-size: 30px;
+    margin-top: 3.25vh;
+}
