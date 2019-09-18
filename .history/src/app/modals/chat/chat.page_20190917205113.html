@@ -1,0 +1,30 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button (click)="regresar()">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row *ngFor="let message of messages">
+            <ng-container *ngIf="message.isMe; else msgTemplate">
+                <ion-col offset="3" size="9" class="message my-message">
+                    <b>{{ message.isMe }}</b><br>
+                    <span>{{ message.msg }}</span>
+                    <div class="time" text-right><br>{{ message.createdAt | date:'short' }}</div>
+                </ion-col>
+            </ng-container>
+            <ng-template #msgTemplate>
+                <ion-col size="9" class="message other-message">
+                    <b>{{ message.isMe }}</b><br>
+                    <span>{{ message.msg }}</span>
+                    <div class="time" text-right><br>{{ message.createdAt | date:'short' }}</div>
+                </ion-col>
+            </ng-template>
+        </ion-row>
+    </ion-grid>
+</ion-content>

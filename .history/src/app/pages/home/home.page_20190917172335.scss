@@ -1,0 +1,42 @@
+ion-content.background {
+    --background: url(../../../assets/img/fondo.png) 0 0/100% 100% no-repeat;
+    --webkit-background-size: cover;
+}
+
+.scan-icon {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.foto {
+    width: 60vw;
+    margin-left: 20vw;
+}
+
+.boton-add {
+    --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+}
+
+.bottom-center {
+    position: absolute;
+    width: 80vw;
+    bottom: 100px;
+    left: 10vw;
+}
+
+.div-precio {
+    display: flex;
+    margin: 1rem auto;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom right, var(--ion-color-primary), var(--ion-color-secondary));
+    box-shadow: 3px 3px 10px grey;
+}
+
+.precio {
+    color: white;
+    font-size: 25pt;
+    text-align: center;
+    margin: auto;
+}

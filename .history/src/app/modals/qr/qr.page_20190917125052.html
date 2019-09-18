@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button (click)="regresar()">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Mi código</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card *ngIf="uid">
+        <ngx-qrcode [qrc-value]="uid" [qrc-element-type]="elementType" qrc-class="my-code">
+        </ngx-qrcode>
+
+    </ion-card>
+
+</ion-content>

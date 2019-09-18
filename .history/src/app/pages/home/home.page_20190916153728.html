@@ -1,0 +1,164 @@
+<ion-content class="background">
+    <ion-slides [options]="slideOpts">
+        <ion-slide>
+            <ion-grid fixed>
+                <ion-row *ngFor="let prod of productos; let i = index">
+                    <ion-col size="12">
+                        <ion-card style="--background: white">
+                            <ion-row>
+                                <ion-col size="8">
+                                    <ion-item lines="none">
+                                        <ion-row>
+                                            <ion-col size="12">
+                                                <ion-label text-wrap>
+                                                    <h2 style="color:var(--ion-color-primary);">{{prod.nombre}}</h2>
+                                                    <h5>{{prod.precio | currency:'CAD':'symbol-narrow':'1.0-2'}} / {{prod.unidad}}</h5>
+                                                </ion-label>
+                                            </ion-col>
+                                            <ion-col size="12">
+                                                <div>
+                                                    <ng-container *ngIf="!prod.cart; else botones">
+                                                        <ion-button expand="block" (click)="agregar(i)" class="boton-add" fill="clear" color="primary" size="small">
+                                                            Agregar
+                                                        </ion-button>
+                                                    </ng-container>
+                                                    <ng-template #botones>
+                                                        <ion-button expand="block" class="boton-add" fill="clear" color="primary" size="small">
+                                                            <ion-grid fixed no-padding>
+                                                                <ion-row no-padding>
+                                                                    <ion-col align-self-center no-padding size="3" (click)="quitar(i)">
+                                                                        -
+                                                                    </ion-col>
+                                                                    <ion-col align-self-center no-padding size="6">
+                                                                        <ion-input readonly="true" class="inpu" type="number" [(ngModel)]="prod.cantidad"></ion-input>
+                                                                    </ion-col>
+
+                                                                    <ion-col align-self-center no-padding size="3" (click)="sumar(i)">
+                                                                        <strong>+</strong>
+                                                                    </ion-col>
+                                                                </ion-row>
+                                                            </ion-grid>
+                                                        </ion-button>
+                                                    </ng-template>
+                                                </div>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                    <img [src]="prod.foto" style="width: 80%; margin-left: 10%"> <br>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+        <ion-slide>
+            <div style="width: 100%; height: 100%">
+                <ion-grid fixed>
+                    <ion-row class="ion-justify-content-start">
+                        <ion-col size="2">
+                            <ion-button (click)="regresar()" fill="clear">
+                                <ion-icon slot="start" slot="icon-only" name="arrow-back"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                        <ion-col size="10">
+                            <h2 class="titulo">Entregar en:</h2>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <ng-container *ngIf="direccion.direccion; else elseTemplate">
+                    <ion-item lines="none">
+                        <ion-label style="text-align: center" class="ion-text-wrap">{{direccion.direccion}}</ion-label>
+                    </ion-item>
+                    <ion-button fill="clear" color="medium" (click)="muestraDirecciones()">
+                        Cambiar dirección
+                    </ion-button>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <ion-button color="dark" fill="clear" (click)="muestraDirecciones()">
+                        Agregar dirección de entrega
+                    </ion-button>
+                </ng-template>
+                <agm-map style="height: 50vh" [latitude]="direccion.lat" [longitude]="direccion.lng" [disableDefaultUI]="true" [streetViewControl]="false" [zoom]="zoom" [zoomControl]="false">
+                    <agm-marker *ngIf="dirReady" [iconUrl]='{"url": icon,"scaledSize": {"height": 120, "width": 80}}' [latitude]="direccion.lat" [longitude]="direccion.lng" [animation]="'DROP'" (dragEnd)="guardaLoc($event)" [markerDraggable]="true"></agm-marker>
+                </agm-map>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div style="position: relative; height: 100%; width: 100%;">
+                <agm-map style="height: 100vh" [latitude]="direccion.lat" [longitude]="direccion.lng" [disableDefaultUI]="true" [streetViewControl]="false" [zoom]="zoom" [zoomControl]="false" [fitBounds]="true">
+                    <agm-marker [agmFitBounds]="true" *ngIf="dirReady" [iconUrl]='{"url": icon,"scaledSize": {"height": 75, "width": 50}}' [latitude]="direccion.lat" [longitude]="direccion.lng" [animation]="'DROP'"></agm-marker>
+                    <agm-marker [agmFitBounds]="true" *ngIf="choferReady" [iconUrl]='{"url": truck,"scaledSize": {"height": 75, "width": 50}}' [latitude]="chofer.lat" [longitude]="chofer.lng" [animation]="'DROP'"></agm-marker>
+                </agm-map>
+                <div class="cuadro">
+                    <ng-container *ngIf="!choferReady; else repaTemplate">
+                        <ion-item lines="none">
+                            <ion-spinner style="margin: auto" color="primary" name="bubbles"></ion-spinner>
+                        </ion-item>
+                        <ion-item lines="none" style="text-align: center">
+                            <ion-label>
+                                <h2>Asignando repartidor</h2>
+                                <p class="ion-text-wrap">Por favor espere mientras encontramos el repartidor más cercano</p>
+                            </ion-label>
+                        </ion-item>
+                    </ng-container>
+                    <ng-template #repaTemplate>
+                        <div style="width: 100%; height: 100%;">
+                            <ion-item lines="none" style="margin-top: 1rem">
+                                <ion-avatar slot="start">
+                                    <img [src]="chofer.foto" />
+                                </ion-avatar>
+                                <ion-label>
+                                    <h2>{{chofer.nombre}}</h2>
+                                </ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-button slot="end">
+                                    Llamar
+                                </ion-button>
+                            </ion-item>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
+
+<ion-footer no-border *ngIf="!pedidoActivo">
+    <ion-toolbar>
+        <ng-container *ngIf="enProceso; else footTemplate">
+            <ion-button (click)="generarPedido()" style="margin-top: 0.5rem" [disabled]="!dirReady" shape="round" expand="block">
+                Continuar
+            </ion-button>
+        </ng-container>
+        <ng-template #footTemplate>
+            <ion-grid fixed class="ion-no-padding">
+                <!-- <ion-row class="ion-no-padding" style="text-align: center">
+                    <ion-col size="5" class="ion-align-self-center">
+                        <ion-button shape="round" expand="block" color="secondary" (click)="quitar()">
+                            <p style="font-size: 22pt; margin: 0; padding: 0">-</p>
+                        </ion-button>
+                    </ion-col>
+                    <ion-col size="2" class="ion-align-self-center">
+                        <p style="font-size: 30pt; margin: 0; padding: 0">{{pedido.cantidad}}</p>
+                    </ion-col>
+                    <ion-col size="5" class="ion-align-self-center">
+                        <ion-button shape="round" expand="block" color="primary" (click)="agregar()">
+                            <p style="font-size: 22pt; margin: 0; padding: 0">+</p>
+                        </ion-button>
+                    </ion-col>
+                </ion-row> -->
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-button [disabled]="cuenta === 0" color="primary" shape="round" expand="block" (click)="verMapa()">
+                            Hacer pedido
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ng-template>
+    </ion-toolbar>
+</ion-footer>
