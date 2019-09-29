@@ -1,0 +1,73 @@
+<ion-content class="background">
+    <div *ngIf="productos">
+        <ion-button fill="clear" (click)="mostrarQr()">
+            <ion-icon color="light" slot="icon-only" name="barcode"></ion-icon>
+        </ion-button>
+        <div class="btn-salir">
+            <ion-button fill="clear" (click)="salir()">
+                <ion-icon color="light" slot="icon-only" name="log-out"></ion-icon>
+            </ion-button>
+        </div>
+        <div class="foto">
+            <preload-image [ratio]="{w: 1, h: 1}" [src]="productos[0].foto">
+            </preload-image>
+            <ion-item lines="none" style="--background: transparent">
+                <ion-label style="text-align: center" color="medium">Precio: {{productos[0].precio | currency:'CAD':'symbol-narrow':'1.0-2'}}</ion-label>
+            </ion-item>
+            <div *ngIf="status === 'listo'">
+                <ng-container *ngIf="!productos[0].cantidad; else botones">
+                    <ion-button expand="block" (click)="agregar(0)" class="boton-add" fill="clear" style="--background: white">
+                        Agregar
+                    </ion-button>
+                </ng-container>
+                <ng-template #botones>
+                    <ion-button expand="block" class="boton-add" fill="clear" style="--background: white">
+                        <ion-grid fixed class="ion-no-padding">
+                            <ion-row class="ion-no-padding">
+                                <ion-col class="ion-no-padding ion-align-self-center" size="3" (click)="quitar(0)">
+                                    -
+                                </ion-col>
+                                <ion-col class="ion-no-padding ion-align-self-center" size="6">
+                                    <ion-input readonly="true" class="inpu" type="number" [(ngModel)]="productos[0].cantidad"></ion-input>
+                                </ion-col>
+                                <ion-col class="ion-no-padding ion-align-self-center" size="3" (click)="sumar(0)">
+                                    <strong>+</strong>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-button>
+                </ng-template>
+            </div>
+        </div>
+        <div *ngIf="status === 'cerrado'" class="horario">
+            Le recordamos que nuestro horario de entrega es de: {{horario}}
+        </div>
+        <ion-list *ngIf="status === 'pedido'">
+            <ion-list-header>
+                <ion-label color="primary">Pedido en curso</ion-label>
+            </ion-list-header>
+            <ion-item detail (click)="muestraPedido()">
+                <ion-label>
+                    <h2 class="ion-text-wrap">
+                        {{pedido.direccion.direccion}}
+                    </h2>
+                    <p *ngIf="pedido.chofer">Repartidor: {{pedido.chofer.nombre}}</p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+    <ion-input id="txtHome" (keyup.enter)="test($event)" type="text" placeholder="Awesome Test"></ion-input>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <div *ngIf="infoReady && status === 'listo'">
+            <div class="precio">
+                Cuenta: {{cuenta | currency:'CAD':'symbol-narrow':'1.0-2'}}
+            </div>
+            <ion-button [disabled]="cuenta === 0" color="primary" shape="round" expand="block" (click)="verMapa()">
+                Hacer pedido
+            </ion-button>
+        </div>
+    </ion-toolbar>
+</ion-footer>

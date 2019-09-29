@@ -1,0 +1,23 @@
+ion-content.background {
+    --background: url(../../../assets/img/fondo.png) 0 0/100% 100% no-repeat;
+    --webkit-background-size: cover;
+}
+
+.fondo {
+    position: absolute;
+    height: 100vh;
+}
+
+.formulario {
+    position: absolute;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.mr-5 {
+    margin-right: 0.5rem;
+}
+
+.hr {
+    border-bottom: 1px solid var(--ion-color-medium);
+}

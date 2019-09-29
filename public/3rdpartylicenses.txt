@@ -61,6 +61,8 @@ MIT
 
 @angular/fire/database
 
+@angular/fire/messaging
+
 @angular/fire/storage
 
 @angular/forms
@@ -290,6 +292,9 @@ Apache-2.0
 @firebase/logger
 Apache-2.0
 
+@firebase/messaging
+Apache-2.0
+
 @firebase/storage
 Apache-2.0
 
@@ -387,9 +392,14 @@ firebase/auth
 
 firebase/database
 
+firebase/messaging
+
 firebase/storage
 
 ionic-loader
+
+ionic4-rating
+MIT
 
 isarray
 MIT
