@@ -301,15 +301,6 @@ Apache-2.0
 @firebase/util
 Apache-2.0
 
-@ionic-native/core
-MIT
-
-@ionic-native/splash-screen
-MIT
-
-@ionic-native/status-bar
-MIT
-
 @ionic/angular
 MIT
 

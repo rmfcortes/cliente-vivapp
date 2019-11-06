@@ -1,0 +1,27 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button (click)="regresar()">
+                <ion-icon color="primary" slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title color="primary">versión 1.3</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ng-container *ngIf="dirReady; else elseTemplate">
+        <h6 class="titulo">Muestra este código al repartidor, para generar historial de compra y recibir grandes benefcios</h6>
+        <ion-card *ngIf="uid" style="text-align: center; font-size: 100pt">
+            <ngx-qrcode style="width: 100%" [qrc-value]="uid" [qrc-element-type]="elementType" qrc-class="test-class">
+            </ngx-qrcode>
+        </ion-card>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <h6 class="titulo">Para generar poder generar tu código QR, registra tu dirección de entrega</h6>
+        <ion-button expand="block" shape="round" (click)="presentMapa()">
+            Registrar mi dirección
+        </ion-button>
+    </ng-template>
+
+</ion-content>
