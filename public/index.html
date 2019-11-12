@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Agua Viva</title>
+    <title>Azul Pura</title>
 
     <base href="/" />
 
@@ -15,15 +15,45 @@
 
     <!-- add to homescreen for ios -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Azul Pura">
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <link rel="manifest" href="manifest.webmanifest">
     <meta name="theme-color" content="#1976d2">
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icon-ios/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icon-ios/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icon-ios/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="assets/icon-ios/apple-touch-icon-167x167.png">
+
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash-ios/icon_1136x640.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/assets/splash-ios/icon_2436x1125.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash-ios/icon_1792x828.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash-ios/icon_828x1792.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash-ios/icon_1334x750.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/assets/splash-ios/icon_1242x2688.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/assets/splash-ios/icon_2208x1242.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/assets/splash-ios/icon_1125x2436.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/assets/splash-ios/icon_1242x2208.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash-ios/icon_2732x2048.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/assets/splash-ios/icon_2688x1242.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash-ios/icon_2224x1668.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash-ios/icon_750x1334.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash-ios/icon_2048x2732.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash-ios/icon_2388x1668.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash-ios/icon_1668x2224.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash-ios/icon_640x1136.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash-ios/icon_1668x2388.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash-ios/icon_2048x1536.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash-ios/icon_1536x2048.png" />
+
+    <!-- Directions Maps -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFJ19-ZZzdW8ftMiMJcgf4eoaBCoCEsS0&libraries=places"></script>
-<link rel="stylesheet" href="styles.e2b1224e596ced12ec2e.css"></head>
+<link rel="stylesheet" href="styles.630ab9b64b862eb63627.css"></head>
 
 <body>
     <app-root></app-root>
     <noscript>Please enable JavaScript to continue using this application.</noscript>
-<script src="runtime-es2015.af336820972dfeea7822.js" type="module"></script><script src="polyfills-es2015.695b122e530f854b8ec2.js" type="module"></script><script src="runtime-es5.c6c1c24ca8dacc8c7eec.js" nomodule></script><script src="polyfills-es5.a8386630ba2679cfbb3f.js" nomodule></script><script src="main-es2015.0835de5731002b7147f9.js" type="module"></script><script src="main-es5.14483bcd68740c9e5d9d.js" nomodule></script></body>
+<script src="runtime-es2015.ef65c786f645114eeec5.js" type="module"></script><script src="polyfills-es2015.695b122e530f854b8ec2.js" type="module"></script><script src="runtime-es5.06a2149786c16fa079c0.js" nomodule></script><script src="polyfills-es5.c86125a55ca48d828a3b.js" nomodule></script><script src="main-es2015.888fe9a321f3a0fe060a.js" type="module"></script><script src="main-es5.834d9b97504a75aa23c6.js" nomodule></script></body>
 
 </html>

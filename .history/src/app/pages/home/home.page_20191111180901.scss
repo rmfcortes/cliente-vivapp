@@ -1,0 +1,86 @@
+ion-content.background {
+    --background: url(../../../assets/img/fondo.png) 0 0/100% 100% no-repeat;
+    --webkit-background-size: cover;
+}
+
+.install-btn {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+.foto {
+    width: 60vw;
+    margin-top: 0.25rem;
+    margin-left: 20vw;
+}
+
+.boton-add {
+    --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+}
+
+.bottom-center {
+    position: absolute;
+    width: 80vw;
+    bottom: 100px;
+    left: 10vw;
+}
+
+.div-precio {
+    display: flex;
+    margin: 1rem auto;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px grey;
+}
+
+.precio {
+    color: var(--ion-color-primary);
+    font-size: 25pt;
+    text-align: center;
+    margin: auto;
+}
+
+.horario {
+    color: var(--ion-color-primary);
+    font-size: 16pt;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.foot-btn {
+    width: 90vw;
+    margin-left: 5vw;
+    margin-bottom: 1rem;
+}
+
+.parrafo {
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+
+.speech-bubble {
+    width: 90vw;
+    padding: 1rem;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+    border-radius: .4em;
+    background: #000000da;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom-color: #000000da;
+    border-top: 0;
+    margin-left: -15px;
+    margin-top: -15px;
+}

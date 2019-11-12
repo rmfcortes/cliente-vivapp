@@ -1,0 +1,33 @@
+<ion-content>
+    <img src="../../../assets/img/notifications.jpg" alt="">
+    <ion-item lines="none" style="text-align: center;">
+        <ion-label color="primary" class="ion-text-wrap">
+            ¿Te gustaría saber cuándo tu repartidor fue asignado, o al momento de recibir mensajes de tu vendedor? De ser así, activa las notificaciones en este dispositivo.
+        </ion-label>
+    </ion-item>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar style="text-align: center;">
+        <!-- <ion-grid fixed class="ion-no-padding">
+            <ion-row>
+                <ion-col size="6" style="background: var(--ion-color-danger);">
+                    <ion-button fill="clear" color="light">
+                        Cancelar
+                    </ion-button>
+                </ion-col>
+                <ion-col size="6" style="background: var(--ion-color-primary);">
+                    <ion-button fill="clear" color="light">
+                        Permitir
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid> -->
+        <ion-button expand="block" shape="round" color="primary" (click)="activaPermisos()">
+            Permitir notificaciones
+        </ion-button>
+        <ion-button expand="block" shape="round" fill="clear" color="primary" (click)="salir()">
+            Cancelar
+        </ion-button>
+    </ion-toolbar>
+</ion-footer>

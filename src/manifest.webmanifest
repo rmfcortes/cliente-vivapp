@@ -1,6 +1,6 @@
 {
-    "name": "Agua Viva",
-    "short_name": "Agua Viva",
+    "name": "Azul Pura",
+    "short_name": "Azul Pura",
     "theme_color": "#1976d2",
     "background_color": "#fafafa",
     "display": "standalone",
@@ -48,4 +48,5 @@
             "type": "image/png"
         }
     ]
+
 }

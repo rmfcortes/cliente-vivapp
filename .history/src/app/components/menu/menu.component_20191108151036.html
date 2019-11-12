@@ -1,0 +1,18 @@
+<ion-list>
+    <ion-item (click)="salir('qr')">
+        <ion-label>Mi código QR</ion-label>
+    </ion-item>
+    <ng-container *ngIf="isAnom; else anomTemplate">
+        <ion-item>
+            <ion-label>Crear cuenta</ion-label>
+        </ion-item>
+    </ng-container>
+    <ng-template #anomTemplate>
+        <ion-item>
+            <ion-label (click)="salir('salir')">Cerrar sesión</ion-label>
+        </ion-item>
+    </ng-template>
+    <ion-button expand="block" (click)="salir()">
+        Cerrar
+    </ion-button>
+</ion-list>

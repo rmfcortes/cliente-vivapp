@@ -1,0 +1,56 @@
+<ion-content>
+    <ion-grid fixed class="ion-no-padding">
+        <ion-row>
+            <ion-col size="2">
+                <ion-icon name="add"></ion-icon>
+            </ion-col>
+            <ion-col size="8">
+                <ion-slides [options]="slideOpts" pager="true">
+                    <ion-slide>
+                        <div style="width: 100%; height: 100% !important; margin-bottom: 3rem;">
+                            <ion-img src="../../../assets/tuto-ios/init.jpg"></ion-img>
+                            <h2 class="ion-text-wrap" style="color: var(--ion-color-primary); text-align: center;">Bienvenido</h2>
+                            <p class="ion-text-wrap" style="text-align: center; color: #413f3f">Para instalar esta aplicación en tu dispositivo, es necesario seguir los siguientes pasos:</p>
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div style="width: 100%; height: 100% !important; margin-bottom: 3rem;">
+                            <ion-img src="../../../assets/tuto-ios/share.jpg"></ion-img>
+                            <h2 class="ion-text-wrap" style="color: var(--ion-color-primary); text-align: center;">Selecciona Compartir</h2>
+                            <p class="ion-text-wrap" style="text-align: center; color: #413f3f">Presiona el icono de compartir al final de la ventana del navegador</p>
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div style="width: 100%; height: 100% !important; margin-bottom: 3rem;">
+                            <ion-img src="../../../assets/tuto-ios/home.jpg"></ion-img>
+                            <h2 class="ion-text-wrap" style="color: var(--ion-color-primary); text-align: center;">Agrega a la página principal</h2>
+                            <p class="ion-text-wrap" style="text-align: center; color: #413f3f">Desplaza los iconos hasta encontrar la opción 'Add to Home Screen' o 'Agregar a Pantalla Principal'</p>
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div style="width: 100%; height: 100% !important; margin-bottom: 3rem;">
+                            <ion-img src="../../../assets/tuto-ios/add.jpg"></ion-img>
+                            <h2 class="ion-text-wrap" style="color: var(--ion-color-primary); text-align: center;">Selecciona Agregar</h2>
+                            <p class="ion-text-wrap" style="text-align: center; color: #413f3f">Presiona el botón 'Add' o 'Agregar' para guardar la aplicación en tu pantalla principal</p>
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div style="width: 100%; height: 100% !important; margin-bottom: 3rem;">
+                            <ion-img src="../../../assets/tuto-ios/screen.jpg"></ion-img>
+                            <h2 class="ion-text-wrap" style="color: var(--ion-color-primary); text-align: center;">Abre la app desde tu pantalla principal</h2>
+                            <p class="ion-text-wrap" style="text-align: center; color: #413f3f">La aplicación desde ahora estará disponible en tu pantalla principal</p>
+                            <ion-button (click)="salir()">
+                                Entendido
+                            </ion-button>
+                        </div>
+                    </ion-slide>
+                </ion-slides>
+            </ion-col>
+            <ion-col size="2">
+                <ion-icon color="primary" name="arrow-forward"></ion-icon>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+</ion-content>

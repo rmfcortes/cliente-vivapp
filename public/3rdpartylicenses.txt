@@ -301,6 +301,12 @@ Apache-2.0
 @firebase/util
 Apache-2.0
 
+@ionic-native/core
+MIT
+
+@ionic-native/network
+MIT
+
 @ionic/angular
 MIT
 
